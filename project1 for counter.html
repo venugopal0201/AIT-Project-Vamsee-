@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter</title>
+    <style>
+        div{
+            margin-top: 150px;
+            border: 1px solid antiquewhite;
+            height: 230px;
+            width: 450px;
+            text-align: center;
+            margin-left: 390px;
+            box-shadow: 2px 2px 10px;
+        }
+        .p1{
+            font-size: 50px;            
+        }
+        #display{
+            font-size: 70px;
+            margin-top: -30px;
+            color: black;
+        }
+        #input{
+            margin-top: -50px;
+        }
+        #Button1{
+            background-color: red;
+            width: 25px;
+            height: 20px;
+            font-size: 15px;
+            color: white;
+            border: transparent;
+        }
+        #Button2{
+            background-color: gray;
+            border: transparent;
+            height: 20px;
+            color: white;
+        }
+        #Button3{
+            background-color: green;
+            height: 20px;
+            color: white;
+            border: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 class="p1">Counter</h1>
+        <p id="display">0</p>
+        <p id="input">
+            <input type="button" id="Button1" name="button" value="-">
+            <input type="button" id="Button2" name="button" value="Reset">
+            <input type="button" id="Button3" name="button" value="+">
+        </p>
+    </div>
+    <script>
+        let i=0;
+        document.getElementById('Button1').addEventListener('click',function(){
+            i--
+            document.getElementById('display').innerHTML=i;
+            if(i<0){
+                document.getElementById('display').style.color='red';
+            }
+            if(i==0){
+                document.getElementById('display').style.color='black';
+            }
+            if(i>0){
+                document.getElementById('display').style.color='green';
+            }
+        })
+        document.getElementById('Button2').addEventListener('click',function(){
+            document.getElementById('display').innerHTML=i=0;  
+            document.getElementById('display').style.color='black';
+        })
+        document.getElementById('Button3').addEventListener('click',function(){
+            i++;
+            document.getElementById('display').innerHTML=i;
+            if(i>0){
+                document.getElementById('display').style.color='green';
+            }
+            if(i==0){
+                document.getElementById('display').style.color='black';
+            }
+            if(i<0){
+                document.getElementById('display').style.color='red';
+            }
+        })
+    </script>
+</body>
+</html>
